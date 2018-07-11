@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>【3】在不同犯罪类别中男女比</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 650px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var colors = ['#5793f3', '#d14a61'];
+        // 指定图表的配置项和数据
+        option = {
+            title: {
+                text: '2011年不同犯罪类别的男女比',
+            },
+            color: colors,
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data:['女性', '男性']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'category',
+                    axisTick : {show: false},
+                    data : ['财产犯罪(%)','贪污贿赂犯罪(%)','暴力犯罪(%)','伪造证件犯罪(%)','知识产权犯罪(%)','发票犯罪(%)','赌博犯罪(%)','秩序犯罪(%)','专营违反犯罪(%)','淫秽犯罪(%)','其他犯罪(%)']
+                }
+            ],
+            series : [
+                {
+                    name:'男性',
+                    type:'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'right'
+                        }
+                    },
+                    data:[87.13, 90, 96.74, 77.78, 75, 57.14, 85.28,92.92,71.43,71.43,77.38]
+                },
+                {
+                    name:'女性',
+                    type:'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'left'
+                        }
+                    },
+                    data:[-12.87, -10, -3.26, -22.22, -25, -42.86, -14.72,-7.08,-28.57,-28.57,-22.62]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <p><span style="font-size:10px;left:200px;position: relative;">数据来源：《生命周期研究：性别、年龄与犯罪》--熊谋林</span></p>
+</body>
+</html>

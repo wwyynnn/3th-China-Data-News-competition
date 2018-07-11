@@ -1,0 +1,589 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>数据新闻比赛</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- 引入 ECharts 文件 -->
+		<script src="echarts.min.js"></script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="inner">
+					<h1>女性犯罪，不只是黄色</h1>
+					<p>传统观念之中，提到犯罪，人们头脑中总能自动浮现出满脸横肉暴虐戾气的杀人犯形象，而这一形象大多是男性。</br>
+						女性犯罪群体似乎在大众视野中很少出现，曾在网上见过这样一个观点，由于女性比男性发泄情绪的渠道更多，</br>
+						比如逛街剁手买买买，或者干脆拉上闺蜜哭一顿，因而女性比男性更不容易积压负面情绪，也不容易因怨气积压而产生犯罪动机。</br>
+						当然这只是一家之言，但却为我们看待犯罪行为提供了除犯罪动机与作案手段之外的另一个角度：性别。</a></p>
+				</div>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Items -->
+				<section class="main items">
+						<!--【1】女性犯罪类别比例图 -->
+						<article class="item">
+							<header>
+								<div id="1" style="width: 31em;height:23em"></div>
+								<script type="text/javascript">
+									//var data = genData(50);
+									// 基于准备好的dom，初始化echarts实例
+									var myChart = echarts.init(document.getElementById('1'));
+									var colors = ['#d14a61', '#81501C', '#E50F34', '#913948', "#DC5A2A",'#EDA88F','#BE8346'];
+									// 指定图表的配置项和数据
+									option = {
+										backgroundColor:"#ffffff",
+										title: {
+											text: '2011年女性犯罪类别比例图',
+										},
+										tooltip : {
+											trigger: 'item',
+											formatter: "{a} <br/>{b} : {c} ({d}%)"
+										},
+										color: colors,
+										legend: {
+											//type: 'scroll',
+											orient: 'vertical',
+											right: 10,
+											top: 20,
+											bottom: 20,
+											data: [''],
+											
+										},
+										series : [
+											{
+												name: '女性犯罪类别比',
+												type: 'pie',
+												radius : '55%',
+												center: ['55%', '50%'],
+												data: [ {value:65.23, name:'财产犯罪'},
+														{value:1.32, name:'贪污贿赂犯罪'},
+														{value:1.99, name:'发票犯罪'},
+														{value:2.65, name:'专营违反犯罪'},
+														{value:23.84, name:'其他犯罪'},
+														{value:2.32, name:'暴力犯罪'},
+														{value:0.66, name:'伪造证件犯罪'},
+														{value:1.99, name:'淫秽犯罪'},
+														],
+												itemStyle: {
+													emphasis: {
+														shadowBlur: 10,
+														shadowOffsetX: 0,
+														shadowColor: 'rgba(0, 0, 0, 0.5)'
+													}
+												}
+											},
+										]
+									};
+									// 使用刚指定的配置项和数据显示图表。
+									myChart.setOption(option);
+								</script>
+							</header>
+							<p style="font-size:10px">数据来源：《生命周期研究：性别、年龄与犯罪》熊谋林</span></p>
+						</article>
+
+						<!--【2】男性犯罪类别比例图 -->
+						<article class="item">
+							<header>
+								<div id="2" style="width: 31em;height:23em"></div>
+								<script type="text/javascript">
+									//var data = genData(50);
+									// 基于准备好的dom，初始化echarts实例
+									var myChart = echarts.init(document.getElementById('2'));
+									var colors = ['#5793f3', '#4E8D95', '#0A599E', '#9A9EA1', "#081D63",'#8A6BE5','#45CEE4'];
+									// 指定图表的配置项和数据
+									option = {
+										backgroundColor:"#ffffff",
+										title: {
+											text: '2011年男性犯罪类别比例图',
+										},
+										tooltip : {
+											trigger: 'item',
+											formatter: "{a} <br/>{b} : {c} ({d}%)"
+										},
+										color: colors,
+										legend: {
+											//type: 'scroll',
+											orient: 'vertical',
+											right: 10,
+											top: 20,
+											bottom: 20,
+											data: [''],
+											
+										},
+										series : [
+											{
+												name: '男性犯罪类别比',
+												type: 'pie',
+												radius : '55%',
+												center: ['55%', '50%'],
+												data: [ {value:63.07, name:'财产犯罪'},
+														{value:1.70, name:'贪污贿赂犯罪'},
+														{value:0.38, name:'发票犯罪'},
+														{value:0.95, name:'专营违反犯罪'},
+														{value:22.26, name:'其他犯罪'},
+														{value:9.83, name:'暴力犯罪'},
+														{value:0.33, name:'伪造证件犯罪'},
+														{value:0.71, name:'淫秽犯罪'},
+														],
+												itemStyle: {
+													emphasis: {
+														shadowBlur: 10,
+														shadowOffsetX: 0,
+														shadowColor: 'rgba(0, 0, 0, 0.5)'
+													}
+												}
+											},
+										]
+									};
+									// 使用刚指定的配置项和数据显示图表。
+									myChart.setOption(option);
+								</script>
+							</header>
+							<p style="font-size:10px">数据来源：《生命周期研究：性别、年龄与犯罪》--熊谋林</span></p>
+						</article>
+					</section>
+
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<h2>犯罪类别之——人为财死</h2>
+						<p style="text-align:left;">通过查阅文献资料我们得到了2010年犯罪类别数据，分析可得，无论是男性还是女性，财产犯罪都稳居榜首，可见目前为了钱财的物欲型犯罪仍然占犯罪类型的绝大多数。但是相比于男性，女性犯罪类别中职务犯罪占比更大，究其原因，随着社会的整体进步，越来越多的女性参与到社会管理的进程中来，有能力进行经济犯罪的人数增多。<br /><br />
+相比于男性，女性体力较不足，因而以谋财为目的的暴力犯罪，女性多为同伙作案。通过伪造发票、证件等诈骗行为所占比例也是居高不下，这与女性性别特征有密切关系。另外，淫秽犯罪的女性占比高于男性，主要因为卖淫行为本身是一种基本无经济投入，却有高额回报的特殊行为。<br /><br />
+通过分析典型案例我们发现，女性职务犯罪有作案时间长、规模小、次数多的特点。因为女性耐心、细心等特质，女性职务犯罪更具长期性和周期性。另外女性的犯罪手段容易表现出间接性和非暴力性，犯罪行为也具有隐蔽性。
+</p>
+					</section>
+
+					<!--【3】在不同犯罪类别中男女比 -->
+					<section id="intro" class="main">
+							<div id="3" style="width:60em;height:20em;"></div>
+							<script type="text/javascript">
+								// 基于准备好的dom，初始化echarts实例
+								var myChart = echarts.init(document.getElementById('3'));
+								var colors = ['#5793f3', '#d14a61'];
+								// 指定图表的配置项和数据
+								option = {
+									title: {
+										text: '2011年不同犯罪类别的男女比',
+									},
+									color: colors,
+									tooltip : {
+										trigger: 'axis',
+										axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+											type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+										}
+									},
+									legend: {
+										data:['女性', '男性']
+									},
+									grid: {
+										left: '3%',
+										right: '4%',
+										bottom: '3%',
+										containLabel: true
+									},
+									xAxis : [
+										{
+											type : 'value'
+										}
+									],
+									yAxis : [
+										{
+											type : 'category',
+											axisTick : {show: false},
+											data : ['财产犯罪(%)','贪污贿赂犯罪(%)','暴力犯罪(%)','伪造证件犯罪(%)','知识产权犯罪(%)','发票犯罪(%)','赌博犯罪(%)','秩序犯罪(%)','专营违反犯罪(%)','淫秽犯罪(%)','其他犯罪(%)']
+										}
+									],
+									series : [
+										{
+											name:'男性',
+											type:'bar',
+											stack: '总量',
+											label: {
+												normal: {
+													show: true,
+													position: 'right'
+												}
+											},
+											data:[87.13, 90, 96.74, 77.78, 75, 57.14, 85.28,92.92,71.43,71.43,77.38]
+										},
+										{
+											name:'女性',
+											type:'bar',
+											stack: '总量',
+											label: {
+												normal: {
+													show: true,
+													position: 'left'
+												}
+											},
+											data:[-12.87, -10, -3.26, -22.22, -25, -42.86, -14.72,-7.08,-28.57,-28.57,-22.62]
+										}
+									]
+								};
+						
+								// 使用刚指定的配置项和数据显示图表。
+								myChart.setOption(option);
+							</script>
+							<p><span style="font-size:10px;position: relative;">数据来源：《生命周期研究：性别、年龄与犯罪》熊谋林</span></p>
+						<h2>犯罪心理之——“她经济”下的扭曲物欲</h2>
+						<p style="text-align:left;">近期各大商家各大品牌都瞄准消费意识逐渐觉醒的女性群体，竞相瓜分“女性经济红利”，引发女性犯罪的个人因素和社会因素密不可分。个人角度看，由于虚荣心作怪，作案动机很大程度上是因为满足其物质需求。社会因素中，由于一些岗位和职务竞争中存在性别歧视，女性由于体力不及男性，且存在休孕假、产假的可能，导致女性在职场竞争中处于劣势，少数女性为了不被淘汰而不惜铤而走险。<br /><br />
+								另外，女性犯罪有较强的非理性成分，犯罪行为也多具有突发性，婚姻和家庭对于女性的影响不容忽视，与男性职务犯罪不同的是，女性往往表现出利他、顺从、多情等意志力薄弱的特点，一些职业女性以贪污、挪用公款来满足其丈夫、恋人或是家庭的物质需求。
+								</p>
+					</section>
+
+					<!--【4】男女犯罪人数与比例 -->
+					<section id="intro" class="main">
+							<div id="4" style="width:64em;height:20em;"></div>
+							<script type="text/javascript">
+								// 基于准备好的dom，初始化echarts实例
+								var myChart = echarts.init(document.getElementById('4'));
+								// 指定图表的配置项和数据
+								var colors = ['#5793f3', '#d14a61', '#675bba','#AD9132'];
+								option = {
+									color: colors,
+									tooltip: {
+										trigger: 'axis',
+										axisPointer: {type: 'cross'}
+									},
+									grid: {
+										right: '25%',
+										left:'15%'
+									},
+									toolbox: {
+										feature: {
+											dataView: {show: false, readOnly: true},
+											restore: {show: false},
+											saveAsImage: {show: false}
+										}
+									},
+									
+									legend: {
+										
+										data:['男性服刑总人数（万人）','女性服刑总人数（万人）','男性罪犯占比(‰)','女性罪犯占比(‰)']
+									},
+									xAxis: [
+										{
+											type: 'category',
+											axisTick: {
+												alignWithLabel: true
+											},
+											data: ['03年','04年','05年','06年','07年','08年','09年','10年','11年','12年']
+										}
+									],
+									yAxis: [
+										{
+											type: 'value',
+											name: '男性服刑总人数',
+											min: 150,
+											max: 166,
+											position: 'lift',
+											axisLine: {
+												lineStyle: {
+													color: colors[0]
+												}
+											},
+											axisLabel: {
+												formatter: '{value} 万人'
+											}
+										},
+										{
+											type: 'value',
+											name: '女性服刑总人数',
+											min: 7,
+											max: 10,
+											position: 'right',
+											axisLine: {
+												lineStyle: {
+													color: colors[1]
+												}
+											},
+											axisLabel: {
+												formatter: '{value} 万人'
+											}
+										},
+										{
+											type: 'value',
+											name: '男性罪犯占比',
+											min: 2.3000,
+											max: 2.4000,
+											position: 'left',
+											offset: 90,
+											axisLine: {
+												lineStyle: {
+													color: colors[2]
+												}
+											},
+											axisLabel: {
+												formatter: '{value} ‰'
+											}
+										},
+										{
+											type: 'value',
+											name: '女性罪犯占比',
+											min: 0.1000,
+											max: 0.1500,
+											position: 'right',
+											offset: 90,
+											axisLine: {
+												lineStyle: {
+													color: colors[3]
+												}
+											},
+											axisLabel: {
+												formatter: '{value} ‰'
+											}
+										},
+										
+									],
+									series: [
+										{
+											name:'男性服刑总人数（万人）',
+											type:'bar',
+											data:[154.61, 156.27, 155.85, 156.57, 156.68, 158.92, 162.34, 164.66, 165.68, 164.19]
+										},
+										{
+											name:'女性服刑总人数（万人）',
+											type:'bar',
+											yAxisIndex: 1,
+											data:[7.13, 7.59, 7.73, 7.78, 7.83, 8.10, 8.52, 9.03, 9.31, 9.58]
+										},
+										{
+											name:'男性罪犯占比(‰)',
+											type:'line',
+											yAxisIndex: 2,
+											data:[2.3230, 2.3333, 2.3132, 2.3118, 2.3025, 2.3249, 2.3648, 2.3951, 2.3987, 2.3661]
+										},
+										{
+											name:'女性罪犯占比(‰)',
+											type:'line',
+											yAxisIndex: 3,
+											data:[0.1137, 0.1204, 0.1219, 0.1221, 0.1222, 0.1256, 0.1314, 0.1382, 0.1417, 0.1451]
+										},
+									]
+								};
+								// 使用刚指定的配置项和数据显示图表。
+								myChart.setOption(option);
+							</script>
+							<p><span style="font-size:10px;position: relative;">数据来源：国家统计局&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采集时间：2018年5月</span></p>
+						<h2>犯罪行为趋势之——性别差异日渐缩小</h2>
+						<p style="text-align:left;">从图中可以看出男性在押服刑人数始终多于女性，究其原因如下。从生理角度看，男性较之有更多的易构成犯罪的特质，如在思维习惯上，女性思考问题的方式更为细腻，且女性更易产生移情作用，避免不利影响。在行为方式上，男性往往比女性更有攻击性且更有支配欲，由于犯罪行为大多是主动性行为，这是男性犯罪率高于女性的原因之一。<br /><br />
+								为了得出男性（或女性）在押服刑人员占该年男性（或女性）总人数的比例，我们查阅了中国国家统计局2003至2012年的人口统计，求得男性与女性的罪犯占比，观察折线图可得，两者犯罪占比从数值上均显示波动上升，并且两者犯罪占比的差距逐渐缩小。
+								</p>
+					</section>
+
+					<!--【5】男女未受教育比例(2015年) -->
+					<section id="intro" class="main">
+							<div id="5" style="width:60em;height:21em;"></div>
+							<script type="text/javascript">
+								// 基于准备好的dom，初始化echarts实例
+								var myChart = echarts.init(document.getElementById('5'));
+								var colors = ['#5793f3', '#d14a61'];
+								// 指定图表的配置项和数据
+								option = {
+									title: {
+										text: '6岁及其以上未上过学人口数抽样调查结果(人)',
+									},
+									color:colors,
+									backgroundColor: '#ffffff',
+									series: [{
+											type: 'pie',
+											name: '',
+											radius: [80, 160],
+											hoverAnimation: false,
+											silent: true,
+											clockwise: false,
+											data: [{
+												value: 0,
+												name: '',
+												label: {
+													normal: {
+														show: true,
+														position: 'center',
+														formatter: '2015年',
+														color: '#253B3C',
+														fontSize: 20,
+														fontWeight: 'bold'
+													}
+												},
+												itemStyle: {
+													normal: {
+														color: '#ffffff',
+														shadowBlur: 50,
+														shadowColor: 'yellow',
+														show: true
+													}
+												}
+											}]
+										},
+										{
+											type: 'pie',
+											radius: [90, 150],
+											hoverAnimation: false,
+											data: [{
+												value: 326009,
+												name: '男性',
+												label: {
+													normal: {
+														color: '#5793f3',
+														fontSize: 16,
+														formatter: '{b}：{c}\n\n比例：{d}%'
+													}
+												},
+												labelLine: {
+													normal: {
+														length: 60
+													}
+												}
+											}, {
+												value: 802846,
+												name: '女性',
+												label: {
+													normal: {
+														color: '#d14a61',
+														fontSize: 16,
+														formatter: '{b}：{c}\n\n比例：{d}%'
+													}
+												},
+												labelLine: {
+													normal: {
+														length: 60
+													}
+												}
+											}]
+										}
+									]
+								};
+								// 使用刚指定的配置项和数据显示图表。
+								myChart.setOption(option);
+							</script>
+							<p><span style="font-size:10px;position: relative;">数据来源：国家统计局&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采集时间：2018年5月</span></p>
+						<!--<h2>???</h2> -->
+						<p style="text-align:left;">据我国司法部的网站披露，2000年底至2006年六年间，我国在押女性犯人数净增了3.9万名，平均每年增加15%，大大超过在押犯平均增长数。李斯特认为“最好的社会政策，也就是最好的刑事政策”，即犯罪的原因大部分在社会，通过收集并分析女性犯罪的相关报道我们发现，女性犯罪者明显呈现三低：文化低、收入低、参政低。正是由于社会对于女性的不平等待遇与女性个人自我期望不符，最终导致犯罪的发生。<br /><br />
+								女性的受教育程度是运用合法途径解决问题保护个人权益，避免犯罪行为的基础。综合国家统计局现有的2015和2016年抽样调查数据显示，6岁及6岁以上 未上过学的女性人口数大概是男性的2.4倍，女性的文化素质低下，直接影响其就业竞争能力和参政能力。
+								</p>
+					</section>
+
+					<!--【6】男女未受教育比例(2016年) -->
+					<section id="intro" class="main">
+							<div id="6" style="width:60em;height:21em;"></div>
+							<script type="text/javascript">
+								// 基于准备好的dom，初始化echarts实例
+								var myChart = echarts.init(document.getElementById('6'));
+								var colors = ['#5793f3', '#d14a61'];
+								// 指定图表的配置项和数据
+								option = {
+									title: {
+										text: '6岁及其以上未上过学人口数抽样调查结果(人)',
+									},
+									color:colors,
+									backgroundColor: '#ffffff',
+									series: [{
+											type: 'pie',
+											name: '',
+											radius: [80, 160],
+											hoverAnimation: false,
+											silent: true,
+											clockwise: false,
+											data: [{
+												value: 0,
+												name: '',
+												label: {
+													normal: {
+														show: true,
+														position: 'center',
+														formatter: '2016年',
+														color: '#253B3C',
+														fontSize: 20,
+														fontWeight: 'bold'
+													}
+												},
+												itemStyle: {
+													normal: {
+														color: '#ffffff',
+														shadowBlur: 50,
+														shadowColor: 'yellow',
+														show: true
+													}
+												}
+											}]
+										},
+										{
+											type: 'pie',
+											radius: [90, 150],
+											hoverAnimation: false,
+											data: [{
+												value: 18267,
+												name: '男性',
+												label: {
+													normal: {
+														color: '#5793f3',
+														fontSize: 16,
+														formatter: '{b}：{c}\n\n比例：{d}%'
+													}
+												},
+												labelLine: {
+													normal: {
+														length: 60
+													}
+												}
+											}, {
+												value: 43181,
+												name: '女性',
+												label: {
+													normal: {
+														color: '#d14a61',
+														fontSize: 16,
+														formatter: '{b}：{c}\n\n比例：{d}%'
+													}
+												},
+												labelLine: {
+													normal: {
+														length: 60
+													}
+												}
+											}]
+										}
+									]
+								};
+								// 使用刚指定的配置项和数据显示图表。
+								myChart.setOption(option);
+							</script>
+							<p><span style="font-size:10px;position: relative;">数据来源：国家统计局&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采集时间：2018年5月</span></p>
+						<!--<h2>???</h2> -->
+						<p style="text-align:left;">就业机会也存在性别不平等的情况，首先随着改革的深入，许多行业逐步实现科学化技术化，对职工文化素质要求增高，女性偏低的受教育程度难以适应市场需求。另外“男主外女主内”的观念依旧盛行，女性为承担更多的家庭责任会相应缩减投入到工作中的精力，客观上导致企事业单位不愿意招用女性员工。就业机会的不平等使女性在社会上占有少量资源，自主权较差，也就很难运用合法手段在社会中达到自身需求目标。<br /><br />
+								性别不平等同样体现在参政方面，第十九届全国人大代表中妇女代表占代表总数的24.09%，较上届提高1.14个百分点，但是该比例与男性相比还是很低。另外女性参政质量不高，参与权力核心的人数较少，大多处于权力边缘。<br /><br />
+								降低女性犯罪率首先要从调整社会结构，减少在教育、就业和参政方面的性别不平等待遇做起，为女性追求实现人生价值提供更多的途径和机会，化解性别歧视下积累的负面情绪
+								</p>
+					</section> 	
+
+				<!-- CTA -->
+					<section id="cta" class="main special">
+						<!--<h2>??</h2>-->
+						<p style="text-align:center;"><span style='color: antiquewhite'>数据来源：国家统计局;《生命周期研究：性别、年龄与犯罪》熊谋林<br />
+							作者团队：张卓  王堰楠<br />
+							TEL：13560022098&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail：1532086435@qq.com<br />
+							指导老师：吴小坤</span></p>
+					</section>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright"><span style='color: antiquewhite'>&copy; Untitled. Design: 王堰楠</span></p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

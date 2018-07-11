@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>【4】男女犯罪人数与比例</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width:700px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba','#AD9132'];
+        option = {
+            color: colors,
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {type: 'cross'}
+            },
+            grid: {
+                right: '25%',
+                left:'25%'
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            
+            legend: {
+                
+                data:['男性服刑总人数（万人）','女性服刑总人数（万人）','男性罪犯占比(‰)','女性罪犯占比(‰)']
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    data: ['03年','04年','05年','06年','07年','08年','09年','10年','11年','12年']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '男性服刑总人数',
+                    min: 150,
+                    max: 166,
+                    position: 'lift',
+                    axisLine: {
+                        lineStyle: {
+                            color: colors[0]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} 万人'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '女性服刑总人数',
+                    min: 7,
+                    max: 10,
+                    position: 'right',
+                    axisLine: {
+                        lineStyle: {
+                            color: colors[1]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} 万人'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '男性罪犯占比',
+                    min: 2.3000,
+                    max: 2.4000,
+                    position: 'left',
+                    offset: 90,
+                    axisLine: {
+                        lineStyle: {
+                            color: colors[2]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} ‰'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '女性罪犯占比',
+                    min: 0.1000,
+                    max: 0.1500,
+                    position: 'right',
+                    offset: 90,
+                    axisLine: {
+                        lineStyle: {
+                            color: colors[3]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} ‰'
+                    }
+                },
+                
+            ],
+            series: [
+                {
+                    name:'男性服刑总人数（万人）',
+                    type:'bar',
+                    data:[154.61, 156.27, 155.85, 156.57, 156.68, 158.92, 162.34, 164.66, 165.68, 164.19]
+                },
+                {
+                    name:'女性服刑总人数（万人）',
+                    type:'bar',
+                    yAxisIndex: 1,
+                    data:[7.13, 7.59, 7.73, 7.78, 7.83, 8.10, 8.52, 9.03, 9.31, 9.58]
+                },
+                {
+                    name:'男性罪犯占比(‰)',
+                    type:'line',
+                    yAxisIndex: 2,
+                    data:[2.3230, 2.3333, 2.3132, 2.3118, 2.3025, 2.3249, 2.3648, 2.3951, 2.3987, 2.3661]
+                },
+                {
+                    name:'女性罪犯占比(‰)',
+                    type:'line',
+                    yAxisIndex: 3,
+                    data:[0.1137, 0.1204, 0.1219, 0.1221, 0.1222, 0.1256, 0.1314, 0.1382, 0.1417, 0.1451]
+                },
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <p><span style="font-size:10px;left:200px;position: relative;">数据来源：国家统计局</br>采集时间：2018年5月</span></p>
+</body>
+</html>

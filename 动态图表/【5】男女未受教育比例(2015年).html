@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>【5】男女未受教育比例(2015年)</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var colors = ['#5793f3', '#d14a61'];
+        // 指定图表的配置项和数据
+        option = {
+            title: {
+                text: '6岁及其以上未上过学人口数抽样调查结果(人)',
+            },
+            color:colors,
+            backgroundColor: '#ffffff',
+            series: [{
+                    type: 'pie',
+                    name: '',
+                    radius: [80, 160],
+                    hoverAnimation: false,
+                    silent: true,
+                    clockwise: false,
+                    data: [{
+                        value: 0,
+                        name: '',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'center',
+                                formatter: '2015年',
+                                color: '#253B3C',
+                                fontSize: 20,
+                                fontWeight: 'bold'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: '#ffffff',
+                                shadowBlur: 50,
+                                shadowColor: 'yellow',
+                                show: true
+                            }
+                        }
+                    }]
+                },
+                {
+                    type: 'pie',
+                    radius: [90, 150],
+                    hoverAnimation: false,
+                    data: [{
+                        value: 326009,
+                        name: '男性',
+                        label: {
+                            normal: {
+                                color: '#5793f3',
+                                fontSize: 16,
+                                formatter: '{b}：{c}\n\n比例：{d}%'
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                length: 60
+                            }
+                        }
+                    }, {
+                        value: 802846,
+                        name: '女性',
+                        label: {
+                            normal: {
+                                color: '#d14a61',
+                                fontSize: 16,
+                                formatter: '{b}：{c}\n\n比例：{d}%'
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                length: 60
+                            }
+                        }
+                    }]
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <p><span style="font-size:10px;left:200px;position: relative;">数据来源：国家统计局</br>采集时间：2018年5月</span></p>
+</body>
+</html>
